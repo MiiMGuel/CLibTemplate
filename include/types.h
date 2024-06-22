@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TYPES_H
+#define TYPES_H
 
 #include "stdbool.h"
 #include "inttypes.h"
@@ -20,7 +21,7 @@ typedef float    f32;
 typedef double   f64;
 
 // boolean types
-typedef bool  b8;
+typedef bool     b8;
 typedef uint32_t b32;
 
 // assertions
@@ -48,3 +49,5 @@ typedef uint32_t b32;
 #       define FAPI
 #   endif
 #endif 
+
+#endif // TYPES_H
