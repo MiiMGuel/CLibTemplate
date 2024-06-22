@@ -50,5 +50,7 @@ target_link_libraries(basic
 
 set_target_properties(basic
     PROPERTIES 
+    ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/example/basic"
+    LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/example/basic"
     RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/example/basic"
 )
