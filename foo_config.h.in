@@ -1,0 +1,4 @@
+#define foo_VERSION_MAJOR @foo_VERSION_MAJOR@
+#define foo_VERSION_MINOR @foo_VERSION_MINOR@
+#define foo_VERSION_PATCH @foo_VERSION_PATCH@
+#define foo_VERSION_TWEAK @foo_VERSION_TWEAK@

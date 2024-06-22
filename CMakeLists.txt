@@ -8,6 +8,8 @@ project(foo
     LANGUAGES C
 )
 
+configure_file(foo_config.h.in foo_config.h)
+
 add_library(${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME} 
@@ -18,6 +20,7 @@ target_sources(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
     PRIVATE
     "src"
+    "${PROJECT_BINARY_DIR}"
     PUBLIC
     "include"
 )
