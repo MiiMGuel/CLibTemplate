@@ -2,7 +2,7 @@
 
 #include "../types.h"
 
-i32 FAPI foo_sum(i32 x, i32 y);
-i32 FAPI foo_sub(i32 x, i32 y);
-i32 FAPI foo_mul(i32 x, i32 y);
-i32 FAPI foo_div(i32 x, i32 y);
+int32_t FAPI foo_sum(int32_t x, int32_t y);
+int32_t FAPI foo_sub(int32_t x, int32_t y);
+int32_t FAPI foo_mul(int32_t x, int32_t y);
+int32_t FAPI foo_div(int32_t x, int32_t y);
