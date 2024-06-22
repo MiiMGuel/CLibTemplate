@@ -14,7 +14,8 @@ project(foo
 
 add_library(${PROJECT_NAME})
 
-target_sources(${PROJECT_NAME} PRIVATE
+target_sources(${PROJECT_NAME} 
+    PRIVATE
     "src/foo.c"
 )
 
@@ -25,6 +26,7 @@ target_include_directories(${PROJECT_NAME}
     "include"
 )
 
-set_target_properties(${PROJECT_NAME} PROPERTIES
+set_target_properties(${PROJECT_NAME} 
+    PROPERTIES
     POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
 )
