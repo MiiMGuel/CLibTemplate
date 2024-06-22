@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17)
 
-option(BUILD_SHARED_LIBS "Build using shared libraries" TRUE)
+option(FOO_SHARED "Build using shared libraries" TRUE)
 
 project(foo
     VERSION 0.1.0.0
@@ -10,7 +10,11 @@ project(foo
 
 configure_file(foo_config.h.in foo_config.h)
 
-add_library(${PROJECT_NAME})
+if (${FOO_SHARED})
+    add_library(${PROJECT_NAME} SHARED)
+else()
+    add_library(${PROJECT_NAME} STATIC)
+endif()
 
 target_sources(${PROJECT_NAME} 
     PRIVATE
@@ -32,7 +36,7 @@ target_compile_definitions(${PROJECT_NAME}
 
 set_target_properties(${PROJECT_NAME} 
     PROPERTIES
-    POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
+    POSITION_INDEPENDENT_CODE ${FOO_SHARED}
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin" )
