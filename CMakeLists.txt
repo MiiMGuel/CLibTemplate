@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.17)
+
 option(BUILD_SHARED_LIBS "Build using shared libraries" TRUE)
 
 project(foo
@@ -28,4 +30,15 @@ target_compile_definitions(${PROJECT_NAME}
 set_target_properties(${PROJECT_NAME} 
     PROPERTIES
     POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
+)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin" )
+
+add_executable(hello_world 
+    "test/hello_world.c"
+)
+
+target_link_libraries(hello_world 
+    PRIVATE
+    foo
 )
