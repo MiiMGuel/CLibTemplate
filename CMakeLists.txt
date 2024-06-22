@@ -1,11 +1,5 @@
 option(BUILD_SHARED_LIBS "Build using shared libraries" TRUE)
 
-if (${BUILD_SHARED_LIBS})
-    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
-endif()
-
 project(foo
     VERSION 0.1.0.0
     DESCRIPTION "a very nice Template"
@@ -24,6 +18,11 @@ target_include_directories(${PROJECT_NAME}
     "src"
     PUBLIC
     "include"
+)
+
+target_compile_definitions(${PROJECT_NAME} 
+    PRIVATE 
+    FOO_EXPORT
 )
 
 set_target_properties(${PROJECT_NAME} 
