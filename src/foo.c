@@ -1,6 +1,6 @@
-#include "foo.h"
+#include "foo/foo.h"
 
-int foo_sum(int x, int y) { return x + y; }
-int foo_sub(int x, int y) { return x - y; }
-int foo_mul(int x, int y) { return x * y; }
-int foo_div(int x, int y) { return x / y; }
+i32 foo_sum(i32 x, i32 y) { return x + y; }
+i32 foo_sub(i32 x, i32 y) { return x - y; }
+i32 foo_mul(i32 x, i32 y) { return x * y; }
+i32 foo_div(i32 x, i32 y) { return x / y; }
