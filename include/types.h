@@ -21,10 +21,10 @@ typedef int                b32;
 typedef char               b8;
 
 #if defined(__clang__) || defined(__gcc__)
-#define STATIC_ASSERT _Static_assert
-#else
-#define STATIC_ASSERT static_assert
-#endif 
+#   define STATIC_ASSERT _Static_assert
+#else // __clang__ || __gcc__
+#   define STATIC_ASSERT static_assert
+#endif // __clang__ || __gcc__
 
 #ifdef FOO_EXPORT
 #   if defined(_WIN32) || defined(_WIN64)
