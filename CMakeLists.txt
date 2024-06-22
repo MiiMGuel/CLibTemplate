@@ -39,8 +39,6 @@ set_target_properties(${PROJECT_NAME}
     POSITION_INDEPENDENT_CODE ${FOO_SHARED}
 )
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin" )
-
 add_executable(hello_world 
     "test/hello_world.c"
 )
@@ -48,4 +46,9 @@ add_executable(hello_world
 target_link_libraries(hello_world 
     PRIVATE
     foo
+)
+
+set_target_properties(hello_world
+    PROPERTIES 
+    CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin"
 )
