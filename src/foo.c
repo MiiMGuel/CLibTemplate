@@ -1,5 +1,5 @@
-#include "foo/foo.h"
-#include "foo_config.h"
+#include <foo/foo.h>
+#include <foo_config.h>
 
 i32 foo_sum(i32 x, i32 y) { return x + y; }
 i32 foo_sub(i32 x, i32 y) { return x - y; }
