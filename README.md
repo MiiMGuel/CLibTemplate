@@ -1,4 +1,4 @@
-# CLibTemplate
+# c-lib
 a C library template with CMake
 
 # Adding Dependencies
