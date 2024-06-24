@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 
 option(FOO_SHARED "Build using shared libraries" TRUE)
+option(FOO_EXAMPLES "Build examples" FALSE)
 
 project(foo
     VERSION 0.1.0.0
@@ -39,6 +40,8 @@ set_target_properties(${PROJECT_NAME}
     POSITION_INDEPENDENT_CODE ${FOO_SHARED}
 )
 
+if(FOO_EXAMPLES)
+
 add_executable(basic
     "example/basic/main.c"
 )
@@ -54,3 +57,5 @@ set_target_properties(basic
     LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/example/basic"
     RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/example/basic"
 )
+
+endif()
